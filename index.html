@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Mama ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::after, *::before {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #09090b;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      padding: 2rem 1.5rem 4rem 1.5rem;
+    }
+
+    /* Floating Particles */
+    .bg-particles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      bottom: -10%;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 1.1rem;
+      animation: floatUp 9s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+      100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Music Button */
+    .music-player {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .music-player:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Header */
+    .header-text {
+      text-align: center;
+      z-index: 2;
+      opacity: 0;
+      margin-top: 1rem;
+      animation: fadeIn 2s ease-in-out 0.5s forwards;
+    }
+
+    .header-text h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      color: #ffffff;
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.3rem;
+    }
+
+    .header-text p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #a1a1aa;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* Flower Container */
+    .flowers {
+      position: relative;
+      width: 100%;
+      height: 42vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      z-index: 1;
+      margin: 1.5rem 0;
+    }
+
+    .flower {
+      position: absolute;
+      bottom: 0;
+      transform-origin: bottom center;
+    }
+
+    .flower__line {
+      width: 4px;
+      height: 0vh;
+      background: linear-gradient(to top, #27272a, #71717a);
+      border-radius: 4px;
+      animation: growStem 2s ease-out 1.2s forwards;
+    }
+
+    .flower__head {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 50px;
+      height: 50px;
+      animation: bloomHead 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.2s forwards;
+    }
+
+    .petal {
+      position: absolute;
+      width: 24px;
+      height: 40px;
+      border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+      left: 13px;
+      top: 5px;
+      transform-origin: bottom center;
+    }
+
+    /* Pure White Flowers */
+    .flower--white .petal {
+      background: linear-gradient(to top, #e4e4e7, #ffffff);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+    }
+    
+    /* Elegant Dark Velvet Flowers */
+    .flower--black .petal {
+      background: linear-gradient(to top, #09090b, #27272a);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .petal:nth-child(1) { transform: rotate(0deg) translateY(-8px); }
+    .petal:nth-child(2) { transform: rotate(45deg) translateY(-8px); }
+    .petal:nth-child(3) { transform: rotate(90deg) translateY(-8px); }
+    .petal:nth-child(4) { transform: rotate(135deg) translateY(-8px); }
+    .petal:nth-child(5) { transform: rotate(180deg) translateY(-8px); }
+    .petal:nth-child(6) { transform: rotate(225deg) translateY(-8px); }
+    .petal:nth-child(7) { transform: rotate(270deg) translateY(-8px); }
+    .petal:nth-child(8) { transform: rotate(315deg) translateY(-8px); }
+
+    .flower__center {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: radial-gradient(circle, #ffffff, #a1a1aa);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+    }
+
+    .flower--1 { left: 50%; transform: translateX(-50%); }
+    .flower--1 .flower__line { height: 30vh; }
+
+    .flower--2 { left: 33%; transform: rotate(-16deg); }
+    .flower--2 .flower__line { height: 24vh; }
+
+    .flower--3 { left: 67%; transform: rotate(16deg); }
+    .flower--3 .flower__line { height: 26vh; }
+
+    /* Emotional Letter Card */
+    .letter-card {
+      z-index: 2;
+      max-width: 500px;
+      width: 100%;
+      background: rgba(24, 24, 27, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out 3.5s forwards;
+    }
+
+    .letter-card h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .letter-card p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #d4d4d8;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .letter-card .signature {
+      text-align: right;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5rem;
+      color: #ffffff;
+      margin-top: 1.5rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes growStem {
+      to { height: 100%; }
+    }
+
+    @keyframes bloomHead {
+      to { transform: translate(-50%, -50%) scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Audio Element for Juice WRLD (Plays on tap) -->
+  <audio id="bg-music" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <!-- Replace the src URL above with your direct MP3 link for Juice WRLD (e.g. Lucid Dreams) -->
+  </audio>
+
+  <button class="music-player" onclick="toggleAudio()">
+    <span id="music-icon">🎵</span> <span id="music-text">Play Juice WRLD</span>
+  </button>
+
+  <!-- Floating Background Particles -->
+  <div class="bg-particles">
+    <div class="particle" style="left: 15%; animation-duration: 8s;">🖤</div>
+    <div class="particle" style="left: 35%; animation-duration: 10s; animation-delay: 2s;">🤍</div>
+    <div class="particle" style="left: 55%; animation-duration: 7s; animation-delay: 1s;">✨</div>
+    <div class="particle" style="left: 75%; animation-duration: 9s; animation-delay: 3s;">🖤</div>
+    <div class="particle" style="left: 88%; animation-duration: 11s; animation-delay: 0.5s;">🤍</div>
+  </div>
+
+  <!-- Header -->
+  <div class="header-text">
+    <h1>Hey Mama...</h1>
+    <p>You’re still my queen, always.</p>
+  </div>
+
+  <!-- Black & White Flower Bouquet -->
+  <div class="flowers">
+    <!-- Middle White Flower -->
+    <div class="flower flower--1 flower--white">
+      <div class="flower__head">
+        <div class="flower__center"></div>
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+      </div>
+      <div class="flower__line"></div>
+    </div>
+
+    <!-- Left Black Flower -->
+    <div class="flower flower--2 flower--black">
+      <div class="flower__head">
+        <div class="flower__center"></div>
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+      </div>
+      <div class="flower__line"></div>
+    </div>
+
+    <!-- Right White Flower -->
+    <div class="flower flower--3 flower--white">
+      <div class="flower__head">
+        <div class="flower__center"></div>
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+      </div>
+      <div class="flower__line"></div>
+    </div>
+  </div>
+
+  <!-- Personal Emotional Note Card -->
+  <div class="letter-card">
+    <h2>To My Beautiful Mama,</h2>
+    <p>
+      I know you love it when I call you <i>Mama</i>, but deep down, you'll always be my queen. 
+    </p>
+    <p>
+      Being the first one to truly share that level of intimacy and trust with you is something I will never take for granted. You trusted me with your purest self, and every single day I want to make sure I protect your heart and cherish you the way you deserve.
+    </p>
+    <p>
+      In a world full of noise, you are my peace. Forever and always.
+    </p>
+    <div class="signature">Yours forever ❤️</div>
+  </div>
+
+  <script>
+    function toggleAudio() {
+      const audio = document.getElementById('bg-music');
+      const text = document.getElementById('music-text');
+      const icon = document.getElementById('music-icon');
+      
+      if (audio.paused) {
+        audio.play();
+        text.innerText = "Pause Music";
+        icon.innerText = "⏸️";
+      } else {
+        audio.paused();
+        text.innerText = "Play Juice WRLD";
+        icon.innerText = "🎵";
+      }
+    }
+  </script>
+</body>
+</html>
