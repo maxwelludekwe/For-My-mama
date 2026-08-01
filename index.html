@@ -23,7 +23,7 @@
       overflow-x: hidden;
       font-family: 'Poppins', sans-serif;
       color: #ffffff;
-      padding: 2rem 1.5rem 4rem 1.5rem;
+      padding: 1.5rem 1rem 4rem 1rem;
     }
 
     /* Floating Particles */
@@ -50,7 +50,7 @@
       100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
     }
 
-    /* Music Player Wrapper */
+    /* Top Play Button Wrapper */
     .music-container {
       position: fixed;
       top: 15px;
@@ -58,67 +58,67 @@
       z-index: 100;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .music-hint {
       display: flex;
       align-items: center;
       gap: 4px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 500;
       color: #ffd166;
       text-shadow: 0 0 8px rgba(255, 209, 102, 0.6);
       animation: bounceArrow 1.2s infinite ease-in-out;
     }
 
-    .music-hint span { font-size: 1.1rem; }
+    .music-hint span { font-size: 1rem; }
 
     @keyframes bounceArrow {
       0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(5px); }
+      50% { transform: translateX(4px); }
     }
 
     .music-player {
-      background: rgba(255, 117, 140, 0.25);
+      background: rgba(255, 117, 140, 0.3);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 182, 193, 0.5);
-      padding: 8px 16px;
+      padding: 8px 14px;
       border-radius: 20px;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
+      gap: 6px;
+      font-size: 0.8rem;
       color: #fff;
       box-shadow: 0 0 15px rgba(255, 117, 140, 0.4);
       transition: all 0.3s ease;
     }
 
-    /* Vibrant Header */
+    /* Header */
     .header-text {
       text-align: center;
       z-index: 2;
       opacity: 0;
-      margin-top: 2rem;
+      margin-top: 2.2rem;
       animation: fadeIn 2s ease-in-out 0.5s forwards;
     }
 
     .header-text h1 {
       font-family: 'Dancing Script', cursive;
-      font-size: 3rem;
+      font-size: 2.8rem;
       background: linear-gradient(45deg, #ff758c, #ff7eb3, #ffd166);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       filter: drop-shadow(0 0 15px rgba(255, 117, 140, 0.6));
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.2rem;
     }
 
     .header-text p {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-weight: 400;
       color: #e2b0ff;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       text-transform: uppercase;
       text-shadow: 0 0 8px rgba(226, 176, 255, 0.5);
     }
@@ -127,12 +127,12 @@
     .flowers {
       position: relative;
       width: 100%;
-      height: 38vh;
+      height: 28vh;
       display: flex;
       justify-content: center;
       align-items: flex-end;
       z-index: 1;
-      margin: 1rem 0;
+      margin: 0.5rem 0;
     }
 
     .flower {
@@ -142,7 +142,7 @@
     }
 
     .flower__line {
-      width: 5px;
+      width: 4px;
       height: 0vh;
       background: linear-gradient(to top, #1b4332, #52b788);
       border-radius: 4px;
@@ -155,94 +155,98 @@
       top: 0;
       left: 50%;
       transform: translate(-50%, -50%) scale(0);
-      width: 55px;
-      height: 55px;
+      width: 45px;
+      height: 45px;
       animation: bloomHead 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.2s forwards;
     }
 
     .petal {
       position: absolute;
-      width: 26px;
-      height: 44px;
+      width: 20px;
+      height: 36px;
       border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
-      left: 14px;
-      top: 5px;
+      left: 12px;
+      top: 4px;
       transform-origin: bottom center;
     }
 
     .flower--gold .petal {
       background: linear-gradient(to top, #ffb703, #ffe66d);
-      box-shadow: 0 0 15px rgba(255, 230, 109, 0.8);
+      box-shadow: 0 0 12px rgba(255, 230, 109, 0.8);
     }
     
     .flower--rose .petal {
       background: linear-gradient(to top, #ff4d6d, #ff758c);
-      box-shadow: 0 0 15px rgba(255, 117, 140, 0.8);
+      box-shadow: 0 0 12px rgba(255, 117, 140, 0.8);
     }
 
     .flower--purple .petal {
       background: linear-gradient(to top, #7b2cbf, #e0aaff);
-      box-shadow: 0 0 15px rgba(224, 170, 255, 0.8);
+      box-shadow: 0 0 12px rgba(224, 170, 255, 0.8);
     }
 
-    .petal:nth-child(1) { transform: rotate(0deg) translateY(-8px); }
-    .petal:nth-child(2) { transform: rotate(45deg) translateY(-8px); }
-    .petal:nth-child(3) { transform: rotate(90deg) translateY(-8px); }
-    .petal:nth-child(4) { transform: rotate(135deg) translateY(-8px); }
-    .petal:nth-child(5) { transform: rotate(180deg) translateY(-8px); }
-    .petal:nth-child(6) { transform: rotate(225deg) translateY(-8px); }
-    .petal:nth-child(7) { transform: rotate(270deg) translateY(-8px); }
-    .petal:nth-child(8) { transform: rotate(315deg) translateY(-8px); }
+    .petal:nth-child(1) { transform: rotate(0deg) translateY(-6px); }
+    .petal:nth-child(2) { transform: rotate(45deg) translateY(-6px); }
+    .petal:nth-child(3) { transform: rotate(90deg) translateY(-6px); }
+    .petal:nth-child(4) { transform: rotate(135deg) translateY(-6px); }
+    .petal:nth-child(5) { transform: rotate(180deg) translateY(-6px); }
+    .petal:nth-child(6) { transform: rotate(225deg) translateY(-6px); }
+    .petal:nth-child(7) { transform: rotate(270deg) translateY(-6px); }
+    .petal:nth-child(8) { transform: rotate(315deg) translateY(-6px); }
 
     .flower__center {
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       background: radial-gradient(circle, #ffffff, #ffd166);
       border-radius: 50%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 10;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 1);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 1);
     }
 
     .flower--1 { left: 50%; transform: translateX(-50%); }
-    .flower--1 .flower__line { height: 28vh; }
+    .flower--1 .flower__line { height: 22vh; }
 
-    .flower--2 { left: 32%; transform: rotate(-16deg); }
-    .flower--2 .flower__line { height: 22vh; }
+    .flower--2 { left: 32%; transform: rotate(-14deg); }
+    .flower--2 .flower__line { height: 18vh; }
 
-    .flower--3 { left: 68%; transform: rotate(16deg); }
-    .flower--3 .flower__line { height: 24vh; }
+    .flower--3 { left: 68%; transform: rotate(14deg); }
+    .flower--3 .flower__line { height: 19vh; }
 
-    /* Photo Frame Section */
-    .photo-gallery {
+    /* Perfect Side-by-Side Photo & Video Gallery */
+    .media-gallery {
       display: flex;
-      justify-content: center;
-      gap: 12px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 1.5rem;
       width: 100%;
     }
 
     .polaroid {
       background: #ffffff;
-      padding: 6px 6px 16px 6px;
+      padding: 6px 6px 10px 6px;
       border-radius: 8px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 117, 140, 0.3);
-      width: 45%;
-      max-width: 160px;
-      transition: transform 0.3s ease;
+      width: 48%;
+      flex: 1;
     }
 
-    .polaroid:nth-child(1) { transform: rotate(-4deg); }
-    .polaroid:nth-child(2) { transform: rotate(4deg); }
+    .polaroid:nth-child(1) { transform: rotate(-3deg); }
+    .polaroid:nth-child(2) { transform: rotate(3deg); }
 
-    .polaroid img {
+    .polaroid img, 
+    .polaroid video {
       width: 100%;
-      height: 140px;
+      height: 150px;
       object-fit: cover;
       border-radius: 4px;
+      display: block;
+      background: #000;
     }
 
     /* Card */
@@ -255,7 +259,7 @@
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 117, 140, 0.3);
       border-radius: 20px;
-      padding: 2rem;
+      padding: 1.5rem 1.2rem;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 117, 140, 0.2);
       opacity: 0;
       animation: fadeIn 2s ease-in-out 3.5s forwards;
@@ -266,12 +270,12 @@
       font-size: 2.2rem;
       color: #ffd166;
       text-shadow: 0 0 10px rgba(255, 209, 102, 0.5);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .letter-card p {
-      font-size: 0.95rem;
-      line-height: 1.8;
+      font-size: 0.92rem;
+      line-height: 1.7;
       color: #f1d3ff;
       font-weight: 300;
       margin-bottom: 1rem;
@@ -284,7 +288,7 @@
       background: linear-gradient(45deg, #ff758c, #ffd166);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-top: 1.5rem;
+      margin-top: 1.2rem;
     }
 
     /* Animations */
@@ -303,22 +307,17 @@
 </head>
 <body>
 
-  <!-- Audio Source: Juice WRLD -->
-  <audio id="bg-music" loop>
-    <source src="https://audio.com/api/v1/audios/1825045259757117/download" type="audio/mpeg">
-  </audio>
-
-  <!-- Music Button Container -->
+  <!-- Top Button Container linked directly to video playback -->
   <div class="music-container">
     <div class="music-hint" id="hint-text">
       Tap here <span>👉</span>
     </div>
-    <button class="music-player" onclick="toggleAudio()">
-      <span id="music-icon">🎵</span> <span id="music-text">Play Juice WRLD</span>
+    <button class="music-player" onclick="toggleVideo()">
+      <span id="music-icon">▶️</span> <span id="music-text">Play Video</span>
     </button>
   </div>
 
-  <!-- Glowing Particles -->
+  <!-- Glowing Floating Particles -->
   <div class="bg-particles">
     <div class="particle" style="left: 10%; animation-duration: 7s;">✨</div>
     <div class="particle" style="left: 30%; animation-duration: 9s; animation-delay: 1.5s;">💖</div>
@@ -333,7 +332,7 @@
     <p>Welcome to a brand new month, my queen 👑</p>
   </div>
 
-  <!-- Flower Bouquet -->
+  <!-- Flowers -->
   <div class="flowers">
     <div class="flower flower--1 flower--rose">
       <div class="flower__head">
@@ -363,10 +362,9 @@
     </div>
   </div>
 
-  <!-- Note Card with Embedded Photos -->
+  <!-- Note Card with Side-by-Side Photo & Video -->
   <div class="letter-card">
     
-    <!-- Photo Frames (Replace src with your uploaded image file names or image links) -->
     <div class="media-gallery">
       <!-- Polaroid Photo Frame -->
       <div class="polaroid">
@@ -375,7 +373,7 @@
 
       <!-- Polaroid Video Frame -->
       <div class="polaroid">
-        <video controls playsinline preload="metadata" style="width: 100%; height: 140px; object-fit: cover; border-radius: 4px; background: #000;">
+        <video id="my-video" controls playsinline preload="metadata">
           <source src="video1.mp4" type="video/mp4">
           Your browser does not support the video.
         </video>
@@ -396,21 +394,21 @@
   </div>
 
   <script>
-    function toggleAudio() {
-      const audio = document.getElementById('bg-music');
+    function toggleVideo() {
+      const video = document.getElementById('my-video');
       const text = document.getElementById('music-text');
       const icon = document.getElementById('music-icon');
       const hint = document.getElementById('hint-text');
       
-      if (audio.paused) {
-        audio.play();
-        text.innerText = "Pause Music";
+      if (video.paused) {
+        video.play();
+        text.innerText = "Pause Video";
         icon.innerText = "⏸️";
-        hint.style.display = "none";
+        if (hint) hint.style.display = "none";
       } else {
-        audio.pause();
-        text.innerText = "Play Juice WRLD";
-        icon.innerText = "🎵";
+        video.pause();
+        text.innerText = "Play Video";
+        icon.innerText = "▶️";
       }
     }
   </script>
