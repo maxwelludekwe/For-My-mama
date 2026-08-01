@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For My Mama ❤️</title>
+  <title>Happy Girlfriend's Day & New Month! ❤️</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
     }
 
     body {
-      background: #09090b;
+      background: radial-gradient(circle at center, #2e0826 0%, #0d0210 100%);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -40,25 +40,49 @@
     .particle {
       position: absolute;
       bottom: -10%;
-      color: rgba(255, 255, 255, 0.3);
-      font-size: 1.1rem;
-      animation: floatUp 9s linear infinite;
+      font-size: 1.2rem;
+      animation: floatUp 8s linear infinite;
+      filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.8));
     }
 
     @keyframes floatUp {
-      0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
       100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
     }
 
-    /* Music Button */
-    .music-player {
+    /* Music Player Wrapper */
+    .music-container {
       position: fixed;
       top: 15px;
       right: 15px;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .music-hint {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #ffd166;
+      text-shadow: 0 0 8px rgba(255, 209, 102, 0.6);
+      animation: bounceArrow 1.2s infinite ease-in-out;
+    }
+
+    .music-hint span { font-size: 1.1rem; }
+
+    @keyframes bounceArrow {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(5px); }
+    }
+
+    .music-player {
+      background: rgba(255, 117, 140, 0.25);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 182, 193, 0.5);
       padding: 8px 16px;
       border-radius: 20px;
       cursor: pointer;
@@ -67,48 +91,48 @@
       gap: 8px;
       font-size: 0.85rem;
       color: #fff;
+      box-shadow: 0 0 15px rgba(255, 117, 140, 0.4);
       transition: all 0.3s ease;
     }
 
-    .music-player:hover {
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    /* Header */
+    /* Vibrant Header */
     .header-text {
       text-align: center;
       z-index: 2;
       opacity: 0;
-      margin-top: 1rem;
+      margin-top: 2rem;
       animation: fadeIn 2s ease-in-out 0.5s forwards;
     }
 
     .header-text h1 {
       font-family: 'Dancing Script', cursive;
       font-size: 3rem;
-      color: #ffffff;
-      text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+      background: linear-gradient(45deg, #ff758c, #ff7eb3, #ffd166);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 15px rgba(255, 117, 140, 0.6));
       margin-bottom: 0.3rem;
     }
 
     .header-text p {
       font-size: 0.95rem;
-      font-weight: 300;
-      color: #a1a1aa;
+      font-weight: 400;
+      color: #e2b0ff;
       letter-spacing: 1.5px;
       text-transform: uppercase;
+      text-shadow: 0 0 8px rgba(226, 176, 255, 0.5);
     }
 
-    /* Flower Container */
+    /* Flowers Container */
     .flowers {
       position: relative;
       width: 100%;
-      height: 42vh;
+      height: 38vh;
       display: flex;
       justify-content: center;
       align-items: flex-end;
       z-index: 1;
-      margin: 1.5rem 0;
+      margin: 1rem 0;
     }
 
     .flower {
@@ -118,10 +142,11 @@
     }
 
     .flower__line {
-      width: 4px;
+      width: 5px;
       height: 0vh;
-      background: linear-gradient(to top, #27272a, #71717a);
+      background: linear-gradient(to top, #1b4332, #52b788);
       border-radius: 4px;
+      box-shadow: 0 0 8px rgba(82, 183, 136, 0.5);
       animation: growStem 2s ease-out 1.2s forwards;
     }
 
@@ -130,32 +155,34 @@
       top: 0;
       left: 50%;
       transform: translate(-50%, -50%) scale(0);
-      width: 50px;
-      height: 50px;
+      width: 55px;
+      height: 55px;
       animation: bloomHead 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.2s forwards;
     }
 
     .petal {
       position: absolute;
-      width: 24px;
-      height: 40px;
+      width: 26px;
+      height: 44px;
       border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
-      left: 13px;
+      left: 14px;
       top: 5px;
       transform-origin: bottom center;
     }
 
-    /* Pure White Flowers */
-    .flower--white .petal {
-      background: linear-gradient(to top, #e4e4e7, #ffffff);
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+    .flower--gold .petal {
+      background: linear-gradient(to top, #ffb703, #ffe66d);
+      box-shadow: 0 0 15px rgba(255, 230, 109, 0.8);
     }
     
-    /* Elegant Dark Velvet Flowers */
-    .flower--black .petal {
-      background: linear-gradient(to top, #09090b, #27272a);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    .flower--rose .petal {
+      background: linear-gradient(to top, #ff4d6d, #ff758c);
+      box-shadow: 0 0 15px rgba(255, 117, 140, 0.8);
+    }
+
+    .flower--purple .petal {
+      background: linear-gradient(to top, #7b2cbf, #e0aaff);
+      box-shadow: 0 0 15px rgba(224, 170, 255, 0.8);
     }
 
     .petal:nth-child(1) { transform: rotate(0deg) translateY(-8px); }
@@ -169,53 +196,83 @@
 
     .flower__center {
       position: absolute;
-      width: 18px;
-      height: 18px;
-      background: radial-gradient(circle, #ffffff, #a1a1aa);
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, #ffffff, #ffd166);
       border-radius: 50%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 10;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 1);
     }
 
     .flower--1 { left: 50%; transform: translateX(-50%); }
-    .flower--1 .flower__line { height: 30vh; }
+    .flower--1 .flower__line { height: 28vh; }
 
-    .flower--2 { left: 33%; transform: rotate(-16deg); }
-    .flower--2 .flower__line { height: 24vh; }
+    .flower--2 { left: 32%; transform: rotate(-16deg); }
+    .flower--2 .flower__line { height: 22vh; }
 
-    .flower--3 { left: 67%; transform: rotate(16deg); }
-    .flower--3 .flower__line { height: 26vh; }
+    .flower--3 { left: 68%; transform: rotate(16deg); }
+    .flower--3 .flower__line { height: 24vh; }
 
-    /* Emotional Letter Card */
+    /* Photo Frame Section */
+    .photo-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+
+    .polaroid {
+      background: #ffffff;
+      padding: 6px 6px 16px 6px;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 117, 140, 0.3);
+      width: 45%;
+      max-width: 160px;
+      transition: transform 0.3s ease;
+    }
+
+    .polaroid:nth-child(1) { transform: rotate(-4deg); }
+    .polaroid:nth-child(2) { transform: rotate(4deg); }
+
+    .polaroid img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    /* Card */
     .letter-card {
       z-index: 2;
       max-width: 500px;
       width: 100%;
-      background: rgba(24, 24, 27, 0.65);
+      background: rgba(35, 10, 48, 0.7);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
+      border: 1px solid rgba(255, 117, 140, 0.3);
+      border-radius: 20px;
       padding: 2rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 117, 140, 0.2);
       opacity: 0;
       animation: fadeIn 2s ease-in-out 3.5s forwards;
     }
 
     .letter-card h2 {
       font-family: 'Dancing Script', cursive;
-      font-size: 2rem;
-      color: #ffffff;
+      font-size: 2.2rem;
+      color: #ffd166;
+      text-shadow: 0 0 10px rgba(255, 209, 102, 0.5);
       margin-bottom: 1rem;
     }
 
     .letter-card p {
       font-size: 0.95rem;
       line-height: 1.8;
-      color: #d4d4d8;
+      color: #f1d3ff;
       font-weight: 300;
       margin-bottom: 1rem;
     }
@@ -223,8 +280,10 @@
     .letter-card .signature {
       text-align: right;
       font-family: 'Dancing Script', cursive;
-      font-size: 1.5rem;
-      color: #ffffff;
+      font-size: 1.8rem;
+      background: linear-gradient(45deg, #ff758c, #ffd166);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-top: 1.5rem;
     }
 
@@ -244,35 +303,39 @@
 </head>
 <body>
 
-  <!-- Audio Element for Juice WRLD (Plays on tap) -->
+  <!-- Audio Source: Juice WRLD -->
   <audio id="bg-music" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    <!-- Replace the src URL above with your direct MP3 link for Juice WRLD (e.g. Lucid Dreams) -->
+    <source src="https://audio.com/api/v1/audios/1825045259757117/download" type="audio/mpeg">
   </audio>
 
-  <button class="music-player" onclick="toggleAudio()">
-    <span id="music-icon">🎵</span> <span id="music-text">Play Juice WRLD</span>
-  </button>
+  <!-- Music Button Container -->
+  <div class="music-container">
+    <div class="music-hint" id="hint-text">
+      Tap here <span>👉</span>
+    </div>
+    <button class="music-player" onclick="toggleAudio()">
+      <span id="music-icon">🎵</span> <span id="music-text">Play Juice WRLD</span>
+    </button>
+  </div>
 
-  <!-- Floating Background Particles -->
+  <!-- Glowing Particles -->
   <div class="bg-particles">
-    <div class="particle" style="left: 15%; animation-duration: 8s;">🖤</div>
-    <div class="particle" style="left: 35%; animation-duration: 10s; animation-delay: 2s;">🤍</div>
-    <div class="particle" style="left: 55%; animation-duration: 7s; animation-delay: 1s;">✨</div>
-    <div class="particle" style="left: 75%; animation-duration: 9s; animation-delay: 3s;">🖤</div>
-    <div class="particle" style="left: 88%; animation-duration: 11s; animation-delay: 0.5s;">🤍</div>
+    <div class="particle" style="left: 10%; animation-duration: 7s;">✨</div>
+    <div class="particle" style="left: 30%; animation-duration: 9s; animation-delay: 1.5s;">💖</div>
+    <div class="particle" style="left: 50%; animation-duration: 6s; animation-delay: 0.5s;">👑</div>
+    <div class="particle" style="left: 70%; animation-duration: 8s; animation-delay: 2.5s;">🌹</div>
+    <div class="particle" style="left: 90%; animation-duration: 10s; animation-delay: 1s;">✨</div>
   </div>
 
   <!-- Header -->
   <div class="header-text">
-    <h1>Hey Mama...</h1>
-    <p>You’re still my queen, always.</p>
+    <h1>Happy Girlfriend's Day!</h1>
+    <p>Welcome to a brand new month, my queen 👑</p>
   </div>
 
-  <!-- Black & White Flower Bouquet -->
+  <!-- Flower Bouquet -->
   <div class="flowers">
-    <!-- Middle White Flower -->
-    <div class="flower flower--1 flower--white">
+    <div class="flower flower--1 flower--rose">
       <div class="flower__head">
         <div class="flower__center"></div>
         <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
@@ -281,8 +344,7 @@
       <div class="flower__line"></div>
     </div>
 
-    <!-- Left Black Flower -->
-    <div class="flower flower--2 flower--black">
+    <div class="flower flower--2 flower--gold">
       <div class="flower__head">
         <div class="flower__center"></div>
         <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
@@ -291,8 +353,7 @@
       <div class="flower__line"></div>
     </div>
 
-    <!-- Right White Flower -->
-    <div class="flower flower--3 flower--white">
+    <div class="flower flower--3 flower--purple">
       <div class="flower__head">
         <div class="flower__center"></div>
         <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
@@ -302,19 +363,30 @@
     </div>
   </div>
 
-  <!-- Personal Emotional Note Card -->
+  <!-- Note Card with Embedded Photos -->
   <div class="letter-card">
+    
+    <!-- Photo Frames (Replace src with your uploaded image file names or image links) -->
+    <div class="photo-gallery">
+      <div class="polaroid">
+        <img src="photo1.jpg" alt="Our Memory 1" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=400&q=80'">
+      </div>
+      <div class="polaroid">
+        <img src="photo2.jpg" alt="Our Memory 2" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=400&q=80'">
+      </div>
+    </div>
+
     <h2>To My Beautiful Mama,</h2>
     <p>
-      I know you love it when I call you <i>Mama</i>, but deep down, you'll always be my queen. 
+      Happy National Girlfriend's Day to the girl who stole my heart and continues to make every single day brighter!
     </p>
     <p>
-      Being the first one to truly share that level of intimacy and trust with you is something I will never take for granted. You trusted me with your purest self, and every single day I want to make sure I protect your heart and cherish you the way you deserve.
+      As we step into this new month together, I just want to promise you more love, more happiness, and even more moments to cherish. Thank you for being my queen, my peace, and my favorite person in the world.
     </p>
     <p>
-      In a world full of noise, you are my peace. Forever and always.
+      Here’s to another month of loving you even more than the last!
     </p>
-    <div class="signature">Yours forever ❤️</div>
+    <div class="signature">Forever yours ❤️</div>
   </div>
 
   <script>
@@ -322,13 +394,15 @@
       const audio = document.getElementById('bg-music');
       const text = document.getElementById('music-text');
       const icon = document.getElementById('music-icon');
+      const hint = document.getElementById('hint-text');
       
       if (audio.paused) {
         audio.play();
         text.innerText = "Pause Music";
         icon.innerText = "⏸️";
+        hint.style.display = "none";
       } else {
-        audio.paused();
+        audio.pause();
         text.innerText = "Play Juice WRLD";
         icon.innerText = "🎵";
       }
